@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>manage_deal</title>
+	<link rel="stylesheet" href="css/send.css"/>
+	<style type="text/css">
+		/*清浮动*/
+		.clearfix:before,.clearfix:after{content: "";display: table;}
+
+		.clearfix:after{clear:both;}
+		body{
+			background-color: #f9f9f9;
+		}
+		.container{
+			width: 1258px;
+			margin:0 auto;
+			clear: both;
+			background-color: #393f4f;
+		}
+		#left_nav{
+			width: 200px;
+			height: 320px;
+			float:left;
+			
+		}
+		#right_content{
+			width: 1058px;
+			height: auto;
+			float: left;
+			background-color: #f9f9f9;
+		}
+		.get_container{
+			width: 930px;
+			margin: 0 auto;
+		}
+		#basic_info,#ticket_info,#get_info,#send_info,#cargo_info,#fee_info,#return_cargo{
+			width: 930px !important;
+		}
+		#return_cargo #send_cargo table tr td table.second{
+			width: 427px !important;
+		}
+		#left_nav ul li{
+			width: 100%;
+			height: 80px;
+			line-height: 80px;
+			text-align: center;
+			position: relative;
+			background-color: #393f4f;
+		}
+		#left_nav ul li a{
+			color: #ffffff;
+			text-decoration: none;
+		}
+		.active{
+			background-color: #5c6580 !important;
+			background:url(bg.gif) no-repeat;
+		}
+		.triangle-up {  
+				position:absolute;  
+				display: inline-block;
+    			width: 0;
+			    height: 0;
+			    right: 0;
+			    top:30px;
+			    border-top: 8px solid transparent;
+			    border-right: 10px solid #f9f9f9;
+			    border-bottom: 8px solid transparent;
+
+		}
+	</style>
+	<script type="text/javascript" src="jquery-3.0.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#left_nav ul li').on('click',function(){
+				$('#left_nav li').each(function(){
+					$(this).removeClass('active');
+					$('#left_nav ul li div').remove();
+				});
+				$(this).addClass('active');
+				$(this).append("<div class='triangle-up'></div>");
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container clearfix">
+		<div id="left_nav">
+			<ul>
+				<li class=""><a href="###">首页</a></li>
+				<li class=""><a href="###">资金情况</a></li>
+				<li class="active"><a href="###">订单处理</a><div class="triangle-up"></div></li>
+				<li class=""><a href="###">销售商品</a></li>
+			</ul>
+		</div>	
+		<div id="right_content">
+				<div class="get_container">
+					<div id="basic_info">
+						<h3>基本信息</h3>
+						<div class="content">
+							<table>
+								<tr>
+									<td>订单编号:<span>6666666</span></td>
+									<td>订单状态:<span>待发货</span></td>
+								</tr>
+								<tr>
+									<td>支付方式:<span>在线支付</span></td>
+									<td>发货时间:<span></span></td>
+								</tr>
+								<tr>
+									<td>订单创建时间:<span>2016-04-06 14:14:41</span></td>
+									<td>付款时间:<span>2016-04-06 14:14:58</span></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div id="ticket_info">
+						<h3>发票信息</h3>
+						<div class="content">
+							<table>
+								<tr>
+									<td>发票类型:<span>普通类型</span></td>
+									<td>发票抬头:<span>广东药科大学</span></td>
+								</tr>
+								<tr>
+									<td>发票内容:<span>办公用品</span></td>
+									<td>是否需要清单:<span>是</span></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div id="get_info">
+						<h3>收货信息</h3>
+						<div class="content">
+							<table cellspacing="0" cellpadding="0">
+								<tr>
+									<td>收货人:<span>林生</span></td>
+									<td>收货地址:<span>广州番禺区小谷围外环东路</span></td>
+								</tr>
+								<tr>
+									<td>详细地址:<span>208号</span></td>
+									<td>联系电话:<span></span></td>
+								</tr>
+								<tr>
+									<td>标志建筑:<span></span></td>
+									<td>邮箱地址:<span></span></td>
+								</tr>
+								<tr>
+									<td>邮政编码:<span></span></td>
+									<td>联系手机:<span></span></td>
+								</tr>
+								<tr>
+									<td>最佳送货时间:<span></span></td>
+									<td><span></span></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div id="send_info">
+						<h3>物流信息</h3>
+						<div class="content">
+							<table>
+								<tr>
+									<td>配送人:<span>某某某，批发商(可以修改)</span></td>
+									<td>收货地址:<span>广州番禺区小谷围外环东路</span></td>
+								</tr>
+							</table>
+							<ul>
+								<li><span class="time">2016-04-01 19:48:41</span><span>已付款</span></li>
+								<li><span class="time">2016-04-01 19:48:41</span><span>某工作人员已确认，打印订单</span></li>
+								<li><span class="time">2016-04-01 19:48:41</span><span>某某仓库已发货</span></li>
+								<li><span class="time">2016-04-01 19:48:41</span><span>货物已验收，感谢你使用便利驿站！</span></li>
+							</ul>
+						</div>
+					</div>
+					<div id="cargo_info">
+						<h3><span>商品信息</span></h3>
+						<div class="specific_cargo">
+							<table cellspacing="0" cellpadding="0">
+								<tr>
+									<th>商品编号</th>
+									<th>商品名称</th>
+									<th>单价</th>
+									<th>数量</th>
+									<th>小计</th>
+								</tr>
+								<tr>
+									<td>12345678</td>
+									<td>优乐美</td>
+									<td>5.90</td>
+									<td>5</td>
+									<td>29.50</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>商品件数:5</td>
+									<td>总价：29.50</td>
+								</tr>
+							</table>
+
+						</div>
+					</div>
+					<div id="fee_info">
+						<h3><span>费用信息</span></h3>
+						<div class="fee_specific">
+							<table cellspacing="0" cellpadding="0">
+								<tr>
+									<th>项目</th>
+									<th>商品总价</th>
+									<th>运费</th>
+									<th>优惠</th>
+									<th>订单总价</th>
+								</tr>
+								<tr>
+									<td>费用</td>
+									<td>66</td>
+									<td>10</td>
+									<td>-10</td>
+									<td>66</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div id="return_cargo">
+						<h3>需退/换货物</h3>
+						<div id="send_cargo">
+							<table cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<table>
+											<tr>
+												<td><img src="icon.png"/></td>
+												<td>日本代购进口零食 长登屋 小兔 草莓大福 9枚</td>
+											</tr>
+										</table>
+									</td>
+									<td>
+										<table class="second">
+											<tr>
+												<td>单价</td>
+												<td>数量</td>
+												<td>总价</td>
+											</tr>
+											<tr>
+												<td>85.00</td>
+												<td>1</td>
+												<td>85.00</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+							
+							<div class="forit">
+								<input type="button" value="发货" />
+							</div>
+						</div>
+					</div>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>manage_deal</title>
+	<link rel="stylesheet" href="css/send.css"/>
+	<link rel="stylesheet" href="css/index.css">
+	<script type="text/javascript" src="jquery-3.0.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#left_nav ul li').on('click',function(){
+				$('#left_nav li').each(function(){
+					$(this).removeClass('active');
+					$('#left_nav ul li div').remove();
+				});
+				$(this).addClass('active');
+				$(this).append("<div class='triangle-up'></div>");
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container clearfix">
+		<div id="left_nav">
+			<ul>
+				<li class="active"><a href="###">首页</a><div class="triangle-up"></div></li>
+				<li class=""><a href="###">资金情况</a></li>
+				<li class=""><a href="###">订单处理</a></li>
+				<li class=""><a href="###">销售商品</a></li>
+			</ul>
+		</div>	
+		<div id="right_content">
+			<div id="item_container">
+				<ul>
+					<li id="wait_send">
+						<a href="http://www.baidu.com">
+							<span class="icon"></span>
+							<span class="explain_text">待结算金额</span>
+							<span class="count">666</span>
+						</a>
+					</li>
+					<li id="wait_pay">
+						<a href="###">
+							<span class="pay"></span>
+							<span class="explain_text">待发货单数</span>
+							<span class="count">6000</span>
+						</a>
+					</li>
+					<li id="wait_pay"><a href="###"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

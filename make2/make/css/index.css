@@ -1,0 +1,104 @@
+
+		/*清浮动*/
+		.clearfix:before,.clearfix:after{content: "";display: table;}
+
+		.clearfix:after{clear:both;}
+		body{
+			background-color: #f9f9f9;
+		}
+		.container{
+			width: 1258px;
+			margin:0 auto;
+			clear: both;
+			background-color: #393f4f;
+		}
+		#left_nav{
+			width: 200px;
+			height: 320px;
+			float:left;
+			
+		}
+		#right_content{
+			width: 1058px;
+			height: auto;
+			float: left;
+			background-color: #f9f9f9;
+		}
+		
+		#left_nav ul li{
+			width: 100%;
+			height: 80px;
+			line-height: 80px;
+			text-align: center;
+			position: relative;
+			background-color: #393f4f;
+		}
+		#left_nav ul li a{
+			color: #ffffff;
+			text-decoration: none;
+		}
+		.active{
+			background-color: #5c6580 !important;
+			background:url(../bg.gif) no-repeat;
+		}
+		.triangle-up {  
+				position:absolute;  
+				display: inline-block;
+    			width: 0;
+			    height: 0;
+			    right: 0;
+			    top:30px;
+			    border-top: 8px solid transparent;
+			    border-right: 10px solid #f9f9f9;
+			    border-bottom: 8px solid transparent;
+
+		}
+		#right_content{
+			width: 1058px;
+			height: 800px;
+			background-color: #ffffff;
+		}
+		#item_container{
+			width: 930px;
+			height: auto;
+			margin:0 auto;
+		}
+		#item_container ul li{
+			width: 220px;
+			height:175px;
+			padding:15px;
+			margin-right: 50px;
+			margin-top: 40px;
+			border-radius: 5px;
+			border:1px solid #ababab;
+			box-shadow: 2px 2px 2px #ababab;
+			float: left;
+		}
+		#item_container ul li a{
+			text-align: center;
+			text-decoration: none;
+		}
+		#item_container ul li span{
+			display:block;
+			margin-top: 15px;
+		}
+		#item_container ul li span.icon,.pay{
+			width: 220px;
+			height: 63px;
+		}
+		#item_container ul li span.icon{
+			background:url(../send.png) no-repeat;
+			background-position: center ;
+		}
+		#item_container ul li span.pay{
+			background:url(../pay.png) no-repeat;
+			background-position: center ;
+		}
+		#item_container ul li span.explain_text{
+			font-size: 18px;
+			color: #000000;
+		}
+		.count{
+			color: #ff7e1d;
+			font-size: 20px;
+		}

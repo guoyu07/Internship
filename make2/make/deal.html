@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>deal</title>
+	
+</head><script src="jquery-3.0.0.min.js" ></script>
+	<link rel="stylesheet" href="css/deal.css" type="text/css"/>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var count=0;
+			$('.left_btn').css(
+				{
+					"margin-top":function(){
+						return  ($(this).siblings().height()-$(this).height())/2;
+					}
+				}
+			);
+			$('.all_select').on('click',function(){
+				if($(this).children().attr('checked')){
+					$(this).removeClass('click');
+					$(this).children().removeAttr('checked');
+					$('.list').each(function(){
+						if($(this).attr('checked')){
+							$(this).removeAttr("checked");
+							$(this).parent().removeClass('click');
+						}
+					});
+					count=0;
+				}else{
+					$(this).addClass('click');
+					$(this).children().attr('checked','checked');
+					$('.list').each(function(){
+						if(!($(this).attr('checked'))){
+							$(this).attr('checked','checked');
+							$(this).parent().addClass('click');
+						}
+					});
+					count=$('.list').length;
+
+				}
+			});
+			$('.pay_list_c1').on('click',function(){
+				if($(this).children().attr("checked")){
+					$(this).removeClass('click');
+					$(this).children().removeAttr('checked');
+				}else{
+					$(this).addClass('click');
+					$(this).children().attr('checked','checked');
+				}
+				$(this).children().each(function(){
+					if($(this).attr('checked')){
+						count++;
+					}else{
+						count--;
+					}
+				});
+				if($('.list').length==count){
+					$('#all_select').attr('checked','checked');
+					$('#all_select').parent().addClass('click');
+				}else{
+					$('#all_select').removeAttr('checked','checked');
+					$('#all_select').parent().removeClass('click');
+				}
+			});
+		});
+	</script>
+<body>
+	<div id="deal_container">
+			<div class="operate">
+				<ul>
+					<li class="on"><a href="###">未打印<span>3</span></a></li>
+					<li><a href="###">待发货<span>0</span></a></li>
+					<li><a href="###">已发货<span>0</span></a></li>
+					<li><a href="###">已结束<span>0</span></a></li>
+				</ul>
+			</div>
+			<div class="item">
+				<span id="info_get" class="border-r">收货信息</span>
+				<!-- <span id="cargo" class="border-r">商品</span> -->
+				<span id="count" class="border-r">数量</span>
+				<span id="action" >操作</span>
+			</div>
+			<div id="table">
+				<div class="specific_order">
+					<div class="left_btn">
+						<label class="pay_list_c1" for="list">
+							<input type="checkbox"  name="list" value="1" class ="list">
+						</label>
+					</div>
+					<div class="info">
+						<div class="order_info border-t">订单号:<span>12345678901</span><span>2016-04-16 15:36:18</span></div>
+						<div class="person_info border-t1">
+							<span>林生</span>
+							<span>12345678901</span>
+							<span>广东省 广州市 番禺区小谷围街道外环东路  广州大学城健康产业产学研孵化中心</span>
+						</div>
+						<div class="order_list border-t1">
+							<table cellpadding="0" cellspacing="0"> 
+								<tr>
+									<td  style="width:570px;padding-left:0px;">
+										<table style="width:600px;" cellpadding="0" cellspacing="0">
+											<tr >
+												<td class="border-r" style="width:480px;height:40px;padding-left:30px;">新粒猫砂紫裂岩超强抑制结菌除臭</td>
+												<td class="border-r" style="width:80px;height:40px;text-align:center;">2</td>
+											</tr>
+											<tr class="border-t1">
+												<td class="border-r border-t1" style="width:480px;height:40px;padding-left:30px;">新粒猫砂紫裂岩超强抑制结菌除臭</td>
+												<td class="border-r border-t1" style="width:80px;height:40px;text-align:center;">2</td>
+											</tr>
+										</table>
+									</td>
+									<td style="width:125px !important;text-align:center;">打印查看详情放弃订单</td>
+								</tr>								
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="specific_order">
+					<div class="left_btn">
+						<label class="pay_list_c1" for="list">
+							<input type="checkbox"  name="list" value="1" class ="list">
+						</label>
+					</div>
+					<div class="info">
+						<div class="order_info border-t">订单号:<span>12345678901</span><span>2016-04-16 15:36:18</span></div>
+						<div class="person_info border-t1">
+							<span>林生</span>
+							<span>12345678901</span>
+							<span>广东省 广州市 番禺区小谷围街道外环东路  广州大学城健康产业产学研孵化中心</span>
+						</div>
+						<div class="order_list border-t1">
+							<table>
+								<tr>
+									<td  style="width:570px;padding-left:0px;">
+										<table style="width:600px;">
+											<tr >
+												<td class="border-r" style="width:480px;height:40px;padding-left:30px;">新粒猫砂紫裂岩超强抑制结菌除臭</td>
+												<td class="border-r" style="width:80px;height:40px;text-align:center;">2</td>
+											</tr>
+											<tr class="border-t1">
+												<td class="border-r border-t1" style="width:480px;height:40px;padding-left:30px;">新粒猫砂紫裂岩超强抑制结菌除臭</td>
+												<td class="border-r border-t1" style="width:80px;height:40px;text-align:center;">2</td>
+											</tr>
+										</table>
+									</td>
+									<td style="width:125px !important;text-align:center;">打印查看详情放弃订单</td>
+								</tr>								
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="specific_order">
+					<div class="left_btn">
+						<label class="pay_list_c1" for="list">
+							<input type="checkbox"  name="list" value="1" class ="list">
+						</label>
+					</div>
+					<div class="info">
+						<div class="order_info border-t">订单号:<span>12345678901</span><span>2016-04-16 15:36:18</span></div>
+						<div class="person_info border-t1">
+							<span>林生</span>
+							<span>12345678901</span>
+							<span>广东省 广州市 番禺区小谷围街道外环东路  广州大学城健康产业产学研孵化中心</span>
+						</div>
+						<div class="order_list border-t1">
+							<table>
+								<tr>
+									<td  style="width:570px;padding-left:0px;">
+										<table style="width:600px;">
+											<tr >
+												<td class="border-r" style="width:480px;height:40px;padding-left:30px;">新粒猫砂紫裂岩超强抑制结菌除臭</td>
+												<td class="border-r" style="width:80px;height:40px;text-align:center;">2</td>
+											</tr>
+											<tr class="border-t1">
+												<td class="border-r border-t1" style="width:480px;height:40px;padding-left:30px;">新粒猫砂紫裂岩超强抑制结菌除臭</td>
+												<td class="border-r border-t1" style="width:80px;height:40px;text-align:center;">2</td>
+											</tr>
+										</table>
+									</td>
+									<td style="width:125px !important;text-align:center;">打印查看详情放弃订单</td>
+								</tr>								
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="specific_order">
+					<div class="left_btn">
+						<label class="pay_list_c1" for="list">
+							<input type="checkbox"  name="list" value="1" class ="list">
+						</label>
+					</div>
+					<div class="info">
+						<div class="order_info border-t">订单号:<span>12345678901</span><span>2016-04-16 15:36:18</span></div>
+						<div class="person_info border-t1">
+							<span>林生</span>
+							<span>12345678901</span>
+							<span>广东省 广州市 番禺区小谷围街道外环东路  广州大学城健康产业产学研孵化中心</span>
+						</div>
+						<div class="order_list border-t1">
+							<table>
+								<tr>
+									<td  style="width:570px;padding-left:0px;">
+										<table style="width:600px;">
+											<tr >
+												<td class="border-r" style="width:480px;height:40px;padding-left:30px;">新粒猫砂紫裂岩超强抑制结菌除臭新粒猫砂紫裂岩超强抑制结菌除臭</td>
+												<td class="border-r" style="width:80px;height:40px;text-align:center;">2</td>
+											</tr>
+											<tr class="border-t1">
+												<td class="border-r border-t1" style="width:480px;height:40px;padding-left:30px;">新粒猫砂紫裂岩超强抑制结菌除臭</td>
+												<td class="border-r border-t1" style="width:80px;height:40px;text-align:center;">2</td>
+											</tr>
+										</table>
+									</td>
+									<td style="width:125px !important;text-align:center;">打印查看详情放弃订单</td>
+								</tr>								
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="specific_order">
+					<div class="left_btn">
+						<label class="pay_list_c1" for="list">
+							<input type="checkbox"  name="list" value="1" class ="list">
+						</label>
+					</div>
+					<div class="info">
+						<div class="order_info border-t">订单号:<span>12345678901</span><span>2016-04-16 15:36:18</span></div>
+						<div class="person_info border-t1">
+							<span>林生</span>
+							<span>12345678901</span>
+							<span>广东省 广州市 番禺区小谷围街道外环东路  广州大学城健康产业产学研孵化中心</span>
+						</div>
+						<div class="order_list border-t1">
+							<table>
+								<tr>
+									<td  style="width:570px;padding-left:0px;">
+										<table style="width:600px;">
+											<tr >
+												<td class="border-r" style="width:480px;height:40px;padding-left:30px;">新粒猫砂紫裂岩超强抑制结菌除臭</td>
+												<td class="border-r" style="width:80px;height:40px;text-align:center;">2</td>
+											</tr>
+											<tr class="border-t1">
+												<td class="border-r border-t1" style="width:480px;height:40px;padding-left:30px;">新粒猫砂紫裂岩超强抑制结菌除臭</td>
+												<td class="border-r border-t1" style="width:80px;height:40px;text-align:center;">2</td>
+											</tr>
+											<tr class="border-t1">
+												<td class="border-r border-t1" style="width:480px;height:40px;padding-left:30px;">新粒猫砂紫裂岩超强抑制结菌除臭</td>
+												<td class="border-r border-t1" style="width:80px;height:40px;text-align:center;">2</td>
+											</tr>
+											<tr class="border-t1">
+												<td class="border-r border-t1" style="width:480px;height:40px;padding-left:30px;">新粒猫砂紫裂岩超强抑制结菌除臭</td>
+												<td class="border-r border-t1" style="width:80px;height:40px;text-align:center;">22</td>
+											</tr>
+										</table>
+									</td>
+									<td style="width:125px !important;text-align:center;">打印查看详情放弃订单</td>
+								</tr>								
+							</table>
+						</div>
+					</div>
+				</div>
+				
+		</div>
+		<div class="all">
+			<div id="all_selected">
+				<label class="all_select" for="all_select">
+					<input type="checkbox"  name="all_select" value="1" id="all_select">
+				</label>
+				<span>全选</span>
+			</div>
+			<div id="print_btn">
+				<button>打印</button>
+			</div>		
+		</div>
+	</div>
+</body>
+</html>

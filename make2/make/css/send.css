@@ -1,0 +1,112 @@
+*{
+	list-style: none;
+	margin: 0;
+	padding:0;
+	font-size: 14px;
+}
+.get_container{
+	width: 770px;
+	background-color: #f9f9f9;
+}
+#basic_info,#ticket_info,#get_info,#send_info,#cargo_info,#fee_info,#return_cargo{
+	width: 752px;
+	margin: 0 auto;
+	background-color: #ffffff;	
+	margin-bottom: 5px;
+}
+#basic_info h3,#ticket_info h3,#get_info h3,#send_info h3,#cargo_info h3,#fee_info h3,#return_cargo h3{
+	height: 30px;
+	padding-left: 50px;
+	line-height: 30px;
+	border-bottom: 1px solid #aad5f1;		
+}
+.content{
+	padding-left: 115px;
+}
+ .content table{
+ 	width：502px !important;
+ }
+ .content table tr td{
+ 	width: 251px;
+	padding-right: 40px;
+
+}
+#send_info ul {
+	width: 100%;
+	margin-top: 15px;
+}
+#send_info ul li span:nth-child(2){
+	display: inline-block;
+	text-indent: 10px;
+}
+#cargo_info h3 span,#fee_info h3 span{
+	border-left: 2px solid #f4b394;
+	padding-left: 10px;
+}
+#cargo_info table,#fee_info table{
+	width: 100%;
+	text-align: center;
+}
+#cargo_info table tr,#fee_info table tr{
+	width: 100%;
+	height:40px;
+}
+#cargo_info table tr td,#cargo_info table tr th,#fee_info table tr td{
+	width: 20%;
+	border-bottom:1px solid #ebebeb;
+	border-right:1px solid #ebebeb;
+}
+#fee_info h3{
+	margin-bottom: 5px;
+}
+#fee_info table{
+	background-color: #e8f2ff;
+}
+#return_cargo {
+	margin-top:30px;
+}
+#return_cargo h3{
+	color: #ffffff;
+	background-color: #e88a56;
+}
+#return_cargo #send_cargo{
+	width: 100%;
+	height: 100px;
+	background-color: #e8f2ff;
+}
+#return_cargo #send_cargo table{
+	width: 100%;
+	height: 100px;
+}
+#return_cargo #send_cargo table tr td table{
+	text-align: center;
+	width: 500px;
+}
+#return_cargo #send_cargo table tr td table.second{
+	width: 252px;
+	height:100% !important;
+}
+#return_cargo #send_cargo table tr td table.second tr{
+	width: 100%;
+	text-align: center;
+}
+#return_cargo #send_cargo table tr td table.second tr td{
+	width: 33.33%;
+	border-left: 1px solid #e8d3cc;
+	border-top: 1px solid #e8d3cc;
+}
+.forit
+{
+	margin-top: 30px;
+}
+.forit input{
+	display: inline-block;
+	cursor:pointer;
+	width: 60px;
+	height: 30px;
+	color: #ffffff;
+	background-color: #e88a56;
+	border: none;
+	border-radius: 5px;
+	float: right;
+}

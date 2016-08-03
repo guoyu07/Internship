@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sale cargo</title>
+	<link rel="stylesheet" href="css/sale_cargo.css"/>
+	<script type="text/javascript" src="jquery-3.0.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var count=0,sum=0;
+
+			$('#input_word').bind({
+				focus:function(){
+					$(this).removeAttr("placeholder");
+				},
+				blur:function(){
+					$(this).attr("placeholder","请输入你要查找的商品");
+				}
+			});
+			$('.btn').each(function(){
+				$(this).css({
+					"margin-top":($(this).parent().height()-$(this).height())/2,
+				});
+			});
+			$('.row_cargo:gt(0)').css({"border-top":"1px solid #dddddd"});
+			$('.sale_cargo_list:gt(0)').css({"border-top":"1px solid #dddddd"});
+
+			$('#manage_all_select').on('click',function(){
+				if($(this).children().attr("checked")){
+					$(this).removeClass('active');
+					$(this).children().removeAttr("checked");
+					$('.sale_cargo').each(function(){
+						if($(this).attr('checked')){
+							$(this).removeAttr("checked");
+							$(this).parent().removeClass('active');
+						}
+					});
+					count=0;
+				}else{
+					$(this).addClass('active');
+					$(this).children().attr("checked","checked");
+					$('.sale_cargo').each(function(){
+						if(!($(this).attr('checked'))){
+							$(this).attr("checked","checked");
+							$(this).parent().addClass('active');
+						}
+					});
+					count=$('.sale_cargo').length;
+				}
+			});
+			$('#all_select_btn').on('click',function(){
+				if($(this).children().attr("checked")){
+					$(this).removeClass('active');
+					$(this).children().removeAttr("checked");
+					$('.cargo').each(function(){
+						if($(this).attr('checked')){
+							$(this).removeAttr("checked");
+							$(this).parent().removeClass('active');
+						}
+					});
+					sum=0;
+				}else{
+					$(this).addClass('active');
+					$(this).children().attr("checked","checked");
+					$('.cargo').each(function(){
+						if(!($(this).attr('checked'))){
+							$(this).attr("checked","checked");
+							$(this).parent().addClass('active');
+						}
+					});
+					sum=$('.cargo').length;
+				}
+			});
+			$('.sale_cargo').on('click',function(){
+				if($(this).attr('checked')){
+					$(this).removeAttr("checked");
+					$(this).parent().removeClass('active');
+					count--;
+				}else{
+					$(this).attr("checked","checked");
+					$(this).parent().addClass('active');
+					count++;
+				}
+				$('.sale_cargo').each(function(){
+					if(!($(this).attr("checked"))){
+						$('#manage_all_select').children().removeAttr("checked");
+						$('#manage_all_select').removeClass('active');
+						
+					}
+					if($(this).attr("checked")){
+						if(count==$('.sale_cargo').length){
+							$('#manage_all_select').children().attr("checked");
+							$('#manage_all_select').addClass('active');
+						}
+					}
+				});
+			});
+			$('.cargo').on('click',function(){
+				if($(this).attr('checked')){
+					$(this).removeAttr("checked");
+					$(this).parent().removeClass('active');
+					sum--;
+				}else{
+					$(this).attr("checked","checked");
+					$(this).parent().addClass('active');
+					sum++;
+				}
+				$('.cargo').each(function(){
+					if(!($(this).attr("checked"))){
+						$('#all_select_btn').children().removeAttr("checked");
+						$('#all_select_btn').removeClass('active');
+						
+					}
+					if($(this).attr("checked")){
+						if(sum==$('.cargo').length){
+							$('#all_select_btn').children().attr("checked");
+							$('#all_select_btn').addClass('active');
+						}
+					}
+				});
+			});
+			$('.list').css("overflow","hidden");
+			$('.item:first>span').addClass('down');
+			$('.list').delegate('div','click',function(){
+				if($(this).height()*2!=$(this).parent().height()){
+					$(this).parent().height(60);
+					$(this).children().removeClass('down').addClass('up');
+				}else{
+					$(this).parent().height(30);
+					$(this).children().removeClass('up').addClass('down');
+				}
+			});
+			$('.item').on('click',function(){
+				$(this).insertBefore($(this).siblings());
+				$('.item:last>span').removeClass();
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="cargo_container">
+		<div id="add_cargo">
+			<div id="add_title">
+				<div class="title">添加销售商品</div>
+				<div class="search_text">
+					<div id="select">
+						<div class="list">
+							<div class="item">商品编号<span class=""></span></div>
+							<div class="item">商品名称<span class=""></span></div>
+						</div>
+					</div>
+					<div id="search_word"><input type="text" placeholder="请输入你要查找的商品" id="input_word"></div>
+					<div id="icon"><span class="search"></span></div>
+				</div>
+			</div>
+		</div>
+		<div id="add_list">
+				<div class="list_title">
+					<div id="cargo_number">商品编号</div>
+					<div id="cargo_name">商品名称</div>
+				</div>
+				<div class="list_cargo">
+					<div class="row_cargo">
+						<div class="left_side">
+							<span class="btn"><input type="checkbox" name="cargo" class="cargo" /></span>
+							<span class="number">6</span>
+						</div>
+						<div class="right_side">
+							<div class="image"><img src="icon.png"/></div>
+							<div class="introduce">新粒桶装猫砂紫裂岩超强抑菌结团除臭7.5kg无粉尘多</div>
+						</div>
+					</div>
+					<div class="row_cargo">
+						<div class="left_side">
+							<span class="btn"><input type="checkbox" name="cargo" class="cargo" /></span>
+							<span class="number">7</span>
+						</div>
+						<div class="right_side">
+							<div class="image"><img src="icon.png"/></div>
+							<div class="introduce">新粒桶装猫新粒桶装猫砂紫裂岩超强抑菌新粒桶装猫臭7.5kg无粉尘多</div>
+						</div>
+					</div>
+					<div class="row_cargo">
+						<div class="left_side">
+							<span class="btn"><input type="checkbox" name="cargo" class="cargo" /></span>
+							<span class="number">6</span>
+						</div>
+						<div class="right_side">
+							<div class="image"><img src="icon.png"/></div>
+							<div class="introduce">新粒桶装猫砂紫裂岩超强抑菌结团除臭7.5kg无粉尘多</div>
+						</div>
+					</div>
+					<div class="row_cargo">
+						<div class="left_side">
+							<span class="btn"><input type="checkbox" name="cargo" class="cargo" /></span>
+							<span class="number">7</span>
+						</div>
+						<div class="right_side">
+							<div class="image"><img src="icon.png"/></div>
+							<div class="introduce">新粒桶装猫砂紫裂岩超强抑菌结团除臭7.5kg无粉尘多</div>
+						</div>
+					</div>
+					<div class="row_cargo">
+						<div class="left_side">
+							<span class="btn"><input type="checkbox" name="cargo" class="cargo" /></span>
+							<span class="number">7</span>
+						</div>
+						<div class="right_side">
+							<div class="image"><img src="icon.png"/></div>
+							<div class="introduce">新粒桶装猫砂紫裂岩超强抑菌结团除臭7.5kg无粉尘多</div>
+						</div>
+					</div>
+					<div class="row_cargo">
+						<div class="left_side">
+							<span class="btn"><input type="checkbox" name="cargo" class="cargo" /></span>
+							<span class="number">7</span>
+						</div>
+						<div class="right_side">
+							<div class="image"><img src="icon.png"/></div>
+							<div class="introduce">新粒桶装猫砂紫裂岩超强抑菌结团除臭7.5kg无粉尘多</div>
+						</div>
+					</div>
+					<div class="row_cargo">
+						<div class="left_side">
+							<span class="btn"><input type="checkbox" name="cargo" class="cargo" /></span>
+							<span class="number">7</span>
+						</div>
+						<div class="right_side">
+							<div class="image"><img src="icon.png"/></div>
+							<div class="introduce">新粒桶装猫砂紫裂岩超强抑菌结团除臭7.5kg无粉尘多</div>
+						</div>
+					</div>
+				</div>
+				<div id="all_select">
+					<div id="all_select_btn"><input type="checkbox" id="select_btn" /><span>全选</span></div>
+					<div id="add"><input type="button" value="添加" id="add_more" /></div>
+				</div>
+		</div>
+		<div id="sale_cargo">
+			<div id="sale_title">
+				<div class="title">销售商品</div>
+			</div>
+			
+		</div>
+		<div id="sale_list">
+				<div class="cargo_list_tit">
+					<div id="sale_cargo_name">商品</div>
+					<div id="sale_cargo_status">状态</div>
+					<div id="sale_cargo_action">操作</div>
+				</div>
+				<div class="sale_cargo_table">
+					<div class="sale_cargo_list">
+						<div class="left_side_sale">
+							<div class="sale_btn"><input type="checkbox" class="sale_cargo" /></div>
+							<div class="sale_cargo_description">
+								<div class="img"><img src="icon.png"/></div>
+								<div class="text">新粒桶装猫新粒桶装猫砂紫裂岩超强抑菌结团除臭7.5kg无粉尘</div>
+							</div>			
+						</div>
+						<div class="middle_side_sale">销售中</div>
+						<div class="right_side_sale"><h4><a href="###">下架</a></h4></div>
+					</div>
+					<div class="sale_cargo_list">
+						<div class="left_side_sale">
+							<div class="sale_btn"><input type="checkbox" class="sale_cargo"/></div>
+							<div class="sale_cargo_description">
+								<div class="img"><img src="icon.png"/></div>
+								<div class="text">新粒桶装猫新粒桶装猫砂紫裂岩超强抑菌结团除臭7.5kg无粉尘</div>
+							</div>			
+						</div>
+						<div class="middle_side_sale">销售中</div>
+						<div class="right_side_sale"><h4><a href="###">下架</a></h4></div>
+					</div>
+					<div class="sale_cargo_list">
+						<div class="left_side_sale">
+							<div class="sale_btn"><input type="checkbox" class="sale_cargo"/></div>
+							<div class="sale_cargo_description">
+								<div class="img"><img src="icon.png"/></div>
+								<div class="text">新粒桶装猫新粒桶装猫砂紫裂岩超强抑菌结团除臭7.5kg无粉尘</div>
+							</div>			
+						</div>
+						<div class="middle_side_sale">销售中</div>
+						<div class="right_side_sale">
+							<h4><a href="###">下架</a></h4>
+							<h4><a href="###">删除</a></h4>
+						</div>
+					</div>
+					<div class="sale_cargo_list">
+						<div class="left_side_sale">
+							<div class="sale_btn"><input type="checkbox" class="sale_cargo"/></div>
+							<div class="sale_cargo_description">
+								<div class="img"><img src="icon.png"/></div>
+								<div class="text">新粒桶装猫新粒桶装猫砂紫裂岩超强抑菌结团除臭7.5kg无粉尘</div>
+							</div>			
+						</div>
+						<div class="middle_side_sale">销售中</div>
+						<div class="right_side_sale"><h4><a href="###">下架</a></h4></div>
+					</div>
+					<div class="sale_cargo_list">
+						<div class="left_side_sale">
+							<div class="sale_btn"><input type="checkbox" class="sale_cargo" /></div>
+							<div class="sale_cargo_description">
+								<div class="img"><img src="icon.png"/></div>
+								<div class="text">新粒桶装猫新粒桶装猫砂紫裂岩超强抑菌结团除臭7.5kg无粉尘</div>
+							</div>			
+						</div>
+						<div class="middle_side_sale">销售中</div>
+						<div class="right_side_sale">
+							<h4><a href="###">下架</a></h4>
+							<h4><a href="###">删除</a></h4>
+						</div>
+					</div>
+				</div>
+				<div id="manage_cargo_select">
+					<div id="manage_all_select" class=""><input type="checkbox"/></div>
+					<span>全选</span>
+				</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+#print_container{
+		width: 800px;
+		height: auto;
+		font-size: 14px;
+	}
+	#print_container #content{
+		width: 770px;
+		height: auto;
+		border: 1px solid #cdcdcd;
+	}
+	#number,#person,#tel,#address{
+		padding-left: 35px;
+		border-bottom: 1px solid #56abe4;
+	}
+	#info{
+		padding-left: 35px;
+		padding-top: 25px;
+	}
+	#number,#person,#tel{
+		height: 50px;
+		line-height: 50px;
+	}
+	#address{
+		height: 90px;
+		padding-top: 25px;
+	}
+	#address span{
+		display: inline-block;
+		padding-top: 25px;
+	}
+	#info{
+		padding-bottom: 20px;
+	}
+	#info table{
+		width: 670px;	
+		margin-top: 20px;
+		margin-left: 15px;
+		text-align: center;
+		border:1px solid #e1e1e1;
+	}
+	#info table tr{
+		width: 100%;
+		height: 35px;
+	}
+	#info table tr td{
+		border-top: 1px solid #e1e1e1;
+	}
+	#info table tr td:nth-child(2),#info table tr th:nth-child(2){
+		border-left: 1px solid #e1e1e1;
+	}
